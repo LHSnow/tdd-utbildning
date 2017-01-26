@@ -1,7 +1,7 @@
 TDD -> DDB
 ==========
 
-Testdriven utveckling av Scrabble
+Testdriven utveckling med Scrabble som exempelapplikation
 
 Dag 1
 ----
@@ -9,7 +9,7 @@ Dag 1
 ### Intro
 
 - Demo med existerande app
-- CI som princip
+- Continuous integration som princip
 - Metoden red-green-refactor
 - Vad undvek vi för problem?
 - Vad vinner vi på detta?
@@ -20,23 +20,26 @@ Dag 1
 ### Enkla enhetstester
 
 - Enhetstestets anatomi
-- Given-then-what
-- En (1) assert per test
+- Given-When-Then (Arrange, Act, Assert)
+- En (1) assert (koncept) per test
 - Grundläggande exempel
 - Single responsibility (S)
-- Acceptanstest -> red-green-refactor - "end to end"
+- Story -> acceptanstest -> red-green-refactor - "end to end"
 
 Övning: Implementera en första metod/klass för att räkna ut poäng för ett ord
 
 ### Ännu bättre enhetstester
 
-- Onion architecture
 - Vad kännetecknar bra tester
+- Vad och hur mycket ska man testa?
+  - Zero-one-some-lots-oops (0,1,5,2000,!?)
+  - Happy/sad path
+  - Att testa exceptions
 - Skriv det test som du vill läsa
 - Open/closed (O)
-- Happy/sad path
-- Testa exceptions
-- Tester ska också underhållas och inte heller ha upprepad kod (setup-teardown)
+- Liskov substitution (L)
+- Tester ska också underhållas
+- Undvika upprepad kod (setup-teardown)
 - Funktionella tester är enklare att underhålla än statebaserade
 
 Övning: Fortsätt bygga applikation utifrån acceptanstest och dessas enhetstest
@@ -53,11 +56,11 @@ Dag 1
 Dag 2
 ----
 
+- Onion architecture
 - Mockning
-- Adapter pattern. Mocka adaptrar, inte det faktiska beroendet.
+- Adapter pattern
 - Att undvika new
-- Liskov substitution (L)
 - Interface segregation (I)
 - Dependency Inversion (D)
 
-Övning: Mocka bort ordlistan i scrabble
+Övning: Mocka bort ordlistan (från den jobbiga yttre världen) i scrabble
