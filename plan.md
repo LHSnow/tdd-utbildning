@@ -9,7 +9,6 @@ Dag 1
 ### Intro
 
 - Demo med existerande app
-- Continuous integration som princip
 - Metoden red-green-refactor
 - Vad undvek vi för problem?
 - Vad vinner vi på detta?
@@ -46,6 +45,7 @@ Dag 1
 
 ### Refaktorisering
 
+- Continuous integration som princip
 - Därför refaktorisering
 - Red-(bättre feedback)-green-refactor
 - Test driven design
