@@ -1,16 +1,16 @@
 TDD -> DDB
 ==========
 
-Testdriven utveckling med Scrabble som exempelapplikation. Övergripande ämnesområden
+Övergripande ämnesområden
 
 - Agila processer för systemutveckling
 - Kännetecken för bra tester
 - Code smells
 
-Varje övning avslutas med en genomgång av exempelkod som förberetts (i tv-kockstil). Deltagarna kan sedan välja att fortsätta med sin egen kod, eller checka ut exempelkoden för att stå i rätt läge för nästa övning. Därför är ingen övning beroende av att man hunnit avsluta den föregående, trots att vi använder samma exempelapplikation. Vi kommer förbereda lämpliga git-commits att utgå ifrån inför varje övning.
+Varje övning avslutas med en genomgång av lösningsexempel som förberetts av lärarna. Deltagarna kan sedan välja att fortsätta med sin egen kod, eller checka ut exempelkoden för att stå i rätt läge för nästa övning. På så sätt blir ingen övning beroende av att man hunnit avsluta den föregående, trots att vi använder samma exempelapplikation. Vi kommer förbereda lämpliga git-commits att utgå ifrån inför varje övning.
 
          s   1  2 3 4     5      
-    -----o---o--o-o-o-----o----o master
+    -----o---o--o-o-o-----o----o Lärare
           \..... \..             Adam
            \........             Eva
 
@@ -55,13 +55,12 @@ Mål: Förstå och utföra processen med enhetstest (red-green-refactor)
 
 Mål: Omvandla ett krav till lämplig mängd enhetstester och dessas implementation
 
-- BDD-intro
+- Introduktion till Behavior Driven Development (BDD)
 - Samarbete med beställare
-- Definiera scope
+- Att definiera scope
 - Testbara exempel (specification by example)
 - Levande dokumentation
 - Tester ska också underhållas
-- Introduktion till övning
 
 Övning: Story -> acceptanstest -> red-green-refactor - "end to end"
 
@@ -98,18 +97,6 @@ Mål: Förstå hur applikationen hålls ihop genom att ständigt refaktorisera
 
 > Lunch
 
-Övning: Mer applikation, för nu lär några större refaktoriseringar vara på sin plats
-
-### Continuous integration
-
-- Continuous integration som princip
-- CI som samarbetsverktyg
-- Verktyg för att förbättra kodkvalitet och undvika enkla misstag
-- Att bli säker på din produkt
-- Att testa många olika konfigurationer
-
-> Fika
-
 ### Verktyg för testdriven design, SOLID
 
 - Single responsibility principle (S) (repetition)
@@ -118,4 +105,8 @@ Mål: Förstå hur applikationen hålls ihop genom att ständigt refaktorisera
 - Interface segregation (I)
 - Dependency Inversion (D)
 
-Övning: Avslutande övning beroende på hur långt vi hunnit, alternativt tidig avslutning
+Övning: Fortsättning från före lunch
+
+> Fika
+
+Övning: Hantera slumpfallet med att dra nya brickor
