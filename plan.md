@@ -74,7 +74,7 @@ Mål: Skriva läsbara och återanvändbara tester för att förenkla (morgondage
 - Skriv det test som du vill läsa (builder pattern)
 - Red-(bättre feedback)-green-refactor
 - Att testa exceptions
-- Undvika upprepad testkod (setup-teardown)
+- Att undvika upprepad testkod (setup-teardown)
 - Funktionella tester är enklare att underhålla än statebaserade
 - Att undvika överproduktion (you ain't gonna need it)
 
