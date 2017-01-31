@@ -1,5 +1,14 @@
 # TDD-utbildning
 
+Testdriven utveckling för med Scrabble som exempelapplikation.
+
+Det här dokumentet kommer fyllas på med inledande information till deltagarna. Annan detaljerad dokumentation finns i andra dokument, se länkar nedan.
+
+- [Kursplan](plan.md)
+- [Spelregler för Scrabble](http://scrabble.hasbro.com/en-us/rules)
+
+## Kom igång
+
 Följ instruktionerna nedan, antingen via IntelliJs menyer eller via ``kommandorad``. I det senare fallet kan du använda antingen git bash eller kommandotolken (windows).
 
 1. Importera git-repositoryt i IntelliJ   
