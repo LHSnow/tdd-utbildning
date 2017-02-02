@@ -33,9 +33,10 @@ För att instruktionerna ovan ska fungera smidigt förutsätts följande ha för
 2.	Github-användare, för att möjliggöra (3)
 3.	Autentisering[*](#auth) till github, för att underlätta clone/pull
 4.  Fungerande nätverk med access till Github och Maven central (eller annan mirror)
-5.	IntelliJ med tillgång till
+5.  JDK7
+6.	IntelliJ med tillgång till
   1. git
-  2. maven
-  3. jUnit
+  2. maven3
+  4. jUnit4
 
 <s id="auth">\*</s> IntelliJ har stöd för både användare+lösenord, api-tokens och ssh-nycklar. Det vore nog smart att använda samma metod under utbildningen som används i Gitlab lokalt. Vi lärare anpassar oss efter det och visar hur importen går till utifrån det sättet.
