@@ -2,12 +2,12 @@ package se.umu.cedar.scrabble;
 
 public class Scrabble
 {
-    public boolean allowCombining(String word, String playerLetters) {
-        for(char c : word.toCharArray()) {
-            if(playerLetters.indexOf(c) < 0) {
+    public boolean allowCombining(String word, String availableLetters) {
+        for(char letterInWord : word.toCharArray()) {
+            if(availableLetters.indexOf(letterInWord) < 0) {
                 return false;
             } else {
-                playerLetters = playerLetters.replaceFirst(""+c, "");
+                availableLetters = availableLetters.replaceFirst(""+letterInWord, "");
             }
         }
         return word.length() >= 2;
