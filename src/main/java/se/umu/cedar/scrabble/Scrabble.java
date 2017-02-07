@@ -11,6 +11,8 @@ public class Scrabble
         for(char c : word.toCharArray()) {
             if(withLetters.indexOf(c) < 0) {
                 return false;
+            } else {
+                withLetters = withLetters.replaceFirst(""+c, "");
             }
         }
         return true;

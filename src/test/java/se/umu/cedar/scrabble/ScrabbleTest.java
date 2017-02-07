@@ -32,6 +32,14 @@ public class ScrabbleTest {
     }
 
     @Test
+    public void using_the_same_letter_twice_is_not_allowed() {
+        Scrabble scrabble = new Scrabble();
+        String withLetters = "ABCDEFG";
+        String word = "EDGE";
+        assertFalse(scrabble.combine(word, withLetters));
+    }
+
+    @Test
     public void place_word_across_on_board() {
 
     }
