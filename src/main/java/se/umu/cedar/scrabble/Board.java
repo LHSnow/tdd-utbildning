@@ -5,8 +5,8 @@ public class Board {
 
     public Board(int size) {
         squares = new char[size][size];
-        for(int i = 0; i < squares[0].length; i++) {
-            for(int j = 0; j < squares[0].length; j++) {
+        for (int i = 0; i < squares[0].length; i++) {
+            for (int j = 0; j < squares[0].length; j++) {
                 squares[i][j] = '.';
             }
         }
@@ -15,8 +15,8 @@ public class Board {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for(char[] row : squares) {
-            for(char letter : row) {
+        for (char[] row : squares) {
+            for (char letter : row) {
                 sb.append(letter);
             }
             sb.append("\n");
@@ -25,15 +25,19 @@ public class Board {
     }
 
     public void placeWord(String word, Reading direction, int row, int column) throws IllegalArgumentException {
-        for(char letter : word.toCharArray()) {
+        for (char letter : word.toCharArray()) {
             try {
                 squares[row][column] = letter;
             } catch (ArrayIndexOutOfBoundsException e) {
                 throw new IllegalArgumentException(e);
             }
             switch (direction) {
-                case ACROSS : column++; break;
-                case DOWN : row++; break;
+                case ACROSS:
+                    column++;
+                    break;
+                case DOWN:
+                    row++;
+                    break;
             }
         }
     }

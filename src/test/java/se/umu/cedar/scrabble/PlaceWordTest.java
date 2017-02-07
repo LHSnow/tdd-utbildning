@@ -17,35 +17,35 @@ public class PlaceWordTest {
     @Test
     public void the_game_board_is_an_empty_square_of_given_size() {
         assertEquals(""
-                    + ".....\n"
-                    + ".....\n"
-                    + ".....\n"
-                    + ".....\n"
-                    + ".....\n"
+                        + ".....\n"
+                        + ".....\n"
+                        + ".....\n"
+                        + ".....\n"
+                        + ".....\n"
                 , board.toString());
     }
 
     @Test
     public void place_word_across_on_board() {
-        board.placeWord("EDGE", Reading.ACROSS,2,1);
+        board.placeWord("EDGE", Reading.ACROSS, 2, 1);
         assertEquals(""
-                    + ".....\n"
-                    + ".....\n"
-                    + ".EDGE\n"
-                    + ".....\n"
-                    + ".....\n"
+                        + ".....\n"
+                        + ".....\n"
+                        + ".EDGE\n"
+                        + ".....\n"
+                        + ".....\n"
                 , board.toString());
     }
 
     @Test
     public void place_word_down_on_board() {
-        board.placeWord("EDGE", Reading.DOWN,1,2);
+        board.placeWord("EDGE", Reading.DOWN, 1, 2);
         assertEquals(""
-                    + ".....\n"
-                    + "..E..\n"
-                    + "..D..\n"
-                    + "..G..\n"
-                    + "..E..\n"
+                        + ".....\n"
+                        + "..E..\n"
+                        + "..D..\n"
+                        + "..G..\n"
+                        + "..E..\n"
                 , board.toString());
     }
 
