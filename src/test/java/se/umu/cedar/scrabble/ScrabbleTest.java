@@ -1,5 +1,6 @@
 package se.umu.cedar.scrabble;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -87,6 +88,7 @@ public class ScrabbleTest {
     }
 
     @Test
+    @Ignore("Not possible to place diagonals, but this rule might need revisiting later")
     public void diagonal_words_are_not_allowed() {
 
     }
