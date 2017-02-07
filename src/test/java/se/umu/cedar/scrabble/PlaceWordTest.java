@@ -1,14 +1,21 @@
 package se.umu.cedar.scrabble;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class PlaceWordTest {
+    private Board board;
+
+    @Before
+    public void given_a_game_board_of_size_five() {
+        board = new Board(5);
+    }
+
     @Test
     public void the_game_board_is_an_empty_square_of_given_size() {
-        Board board = new Board(5);
         assertEquals(""
                     + ".....\n"
                     + ".....\n"
@@ -20,7 +27,6 @@ public class PlaceWordTest {
 
     @Test
     public void place_word_across_on_board() {
-        Board board = new Board(5);
         board.placeWord("EDGE", Reading.ACROSS,2,1);
         assertEquals(""
                     + ".....\n"
@@ -33,7 +39,6 @@ public class PlaceWordTest {
 
     @Test
     public void place_word_down_on_board() {
-        Board board = new Board(5);
         board.placeWord("EDGE", Reading.DOWN,1,2);
         assertEquals(""
                     + ".....\n"
