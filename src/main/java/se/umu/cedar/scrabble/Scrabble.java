@@ -2,17 +2,12 @@ package se.umu.cedar.scrabble;
 
 public class Scrabble
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
-
-    public boolean combine(String word, String withLetters) {
+    public boolean allowCombining(String word, String playerLetters) {
         for(char c : word.toCharArray()) {
-            if(withLetters.indexOf(c) < 0) {
+            if(playerLetters.indexOf(c) < 0) {
                 return false;
             } else {
-                withLetters = withLetters.replaceFirst(""+c, "");
+                playerLetters = playerLetters.replaceFirst(""+c, "");
             }
         }
         return true;

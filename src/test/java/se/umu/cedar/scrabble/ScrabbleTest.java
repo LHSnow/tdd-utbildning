@@ -20,7 +20,7 @@ public class ScrabbleTest {
         Scrabble scrabble = new Scrabble();
         String withLetters = "ABCDEFG";
         String word = "BAG";
-        assertTrue(scrabble.combine(word, withLetters));
+        assertTrue(scrabble.allowCombining(word, withLetters));
     }
 
     @Test
@@ -28,7 +28,7 @@ public class ScrabbleTest {
         Scrabble scrabble = new Scrabble();
         String withLetters = "ABCDEFG";
         String word = "BAGS";
-        assertFalse(scrabble.combine(word, withLetters));
+        assertFalse(scrabble.allowCombining(word, withLetters));
     }
 
     @Test
@@ -36,7 +36,15 @@ public class ScrabbleTest {
         Scrabble scrabble = new Scrabble();
         String withLetters = "ABCDEFG";
         String word = "EDGE";
-        assertFalse(scrabble.combine(word, withLetters));
+        assertFalse(scrabble.allowCombining(word, withLetters));
+    }
+
+    @Test
+    public void using_two_of_the_same_letter_is_allowed() {
+        Scrabble scrabble = new Scrabble();
+        String withLetters = "DEEEEEG";
+        String word = "EDGE";
+        assertTrue(scrabble.allowCombining(word, withLetters));
     }
 
     @Test
