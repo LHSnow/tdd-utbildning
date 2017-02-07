@@ -57,18 +57,33 @@ public class ScrabbleTest {
                 + ".....\n"
                 + ".....\n"
                 + ".....\n"
-                ,board.toString());
+                , board.toString());
     }
 
     @Test
     public void place_word_across_on_board() {
-
-
+        Board board = new Board(5);
+        board.placeWordAcrossAt("EDGE",2,1);
+        assertEquals(
+                  ".....\n"
+                + ".....\n"
+                + ".EDGE\n"
+                + ".....\n"
+                + ".....\n"
+                , board.toString());
     }
 
     @Test
     public void place_word_down_on_board() {
-
+        Board board = new Board(5);
+        board.placeWordDownAt("EDGE",1,2);
+        assertEquals(
+                  ".....\n"
+                + "..E..\n"
+                + "..D..\n"
+                + "..G..\n"
+                + "..E..\n"
+                , board.toString());
     }
 
     @Test

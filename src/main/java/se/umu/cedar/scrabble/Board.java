@@ -22,4 +22,18 @@ public class Board {
         }
         return sb.toString();
     }
+
+    public void placeWordAcrossAt(String word, int row, int column) {
+        for(char letter : word.toCharArray()) {
+            squares[row][column] = letter;
+            column++;
+        }
+    }
+
+    public void placeWordDownAt(String word, int row, int column) {
+        for(char letter : word.toCharArray()) {
+            squares[row][column] = letter;
+            row++;
+        }
+    }
 }
