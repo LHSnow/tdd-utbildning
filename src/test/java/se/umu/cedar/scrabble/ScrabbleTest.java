@@ -26,6 +26,22 @@ public class ScrabbleTest {
     }
 
     @Test
+    public void single_letter_words_are_not_allowed() {
+        Scrabble scrabble = new Scrabble();
+        String withLetters = "ABCDEFG";
+        String word = "A";
+        assertFalse(scrabble.allowCombining(word, withLetters));
+    }
+
+    @Test
+    public void zero_letter_words_are_not_allowed() {
+        Scrabble scrabble = new Scrabble();
+        String withLetters = "ABCDEFG";
+        String word = "";
+        assertFalse(scrabble.allowCombining(word, withLetters));
+    }
+
+    @Test
     public void combining_words_with_non_existent_letters_is_not_allowed() {
         Scrabble scrabble = new Scrabble();
         String withLetters = "ABCDEFG";

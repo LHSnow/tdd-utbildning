@@ -10,6 +10,6 @@ public class Scrabble
                 playerLetters = playerLetters.replaceFirst(""+c, "");
             }
         }
-        return true;
+        return word.length() >= 2;
     }
 }
