@@ -80,7 +80,7 @@ public class ScrabbleTest {
     @Test
     public void place_word_across_on_board() {
         Board board = new Board(5);
-        board.placeWordAcrossAt("EDGE",2,1);
+        board.placeWord("EDGE", Reading.ACROSS,2,1);
         assertEquals(
                   ".....\n"
                 + ".....\n"
@@ -93,7 +93,7 @@ public class ScrabbleTest {
     @Test
     public void place_word_down_on_board() {
         Board board = new Board(5);
-        board.placeWordDownAt("EDGE",1,2);
+        board.placeWord("EDGE", Reading.DOWN,1,2);
         assertEquals(
                   ".....\n"
                 + "..E..\n"

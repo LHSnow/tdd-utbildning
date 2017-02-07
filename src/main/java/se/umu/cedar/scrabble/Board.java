@@ -24,17 +24,13 @@ public class Board {
         return sb.toString();
     }
 
-    public void placeWordAcrossAt(String word, int row, int column) {
+    public void placeWord(String word, Reading direction, int row, int column) {
         for(char letter : word.toCharArray()) {
             squares[row][column] = letter;
-            column++;
-        }
-    }
-
-    public void placeWordDownAt(String word, int row, int column) {
-        for(char letter : word.toCharArray()) {
-            squares[row][column] = letter;
-            row++;
+            switch (direction) {
+                case ACROSS : column++; break;
+                case DOWN : row++; break;
+            }
         }
     }
 }
