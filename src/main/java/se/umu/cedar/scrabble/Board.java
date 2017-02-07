@@ -24,9 +24,13 @@ public class Board {
         return sb.toString();
     }
 
-    public void placeWord(String word, Reading direction, int row, int column) {
+    public void placeWord(String word, Reading direction, int row, int column) throws IllegalArgumentException {
         for(char letter : word.toCharArray()) {
-            squares[row][column] = letter;
+            try {
+                squares[row][column] = letter;
+            } catch (ArrayIndexOutOfBoundsException e) {
+                throw new IllegalArgumentException(e);
+            }
             switch (direction) {
                 case ACROSS : column++; break;
                 case DOWN : row++; break;

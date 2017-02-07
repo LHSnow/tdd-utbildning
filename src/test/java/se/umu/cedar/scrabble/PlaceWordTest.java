@@ -49,6 +49,18 @@ public class PlaceWordTest {
                 , board.toString());
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void placing_begins_outside_board_throws_illegal_argument_exception() {
+        board.placeWord("ANY", Reading.ACROSS, 6, 0);
+        board.placeWord("ANY", Reading.DOWN, 0, 6);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void placing_ends_outside_board_throws_illegal_argument_exception() {
+        board.placeWord("OUTSIDE", Reading.DOWN, 0, 0);
+        board.placeWord("OUTSIDE", Reading.ACROSS, 0, 0);
+    }
+
     @Test
     @Ignore("Not possible to place diagonals, but this rule might need revisiting later")
     public void diagonal_words_are_not_allowed() {
