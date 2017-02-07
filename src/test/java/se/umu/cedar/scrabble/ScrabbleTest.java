@@ -2,6 +2,7 @@ package se.umu.cedar.scrabble;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -48,7 +49,20 @@ public class ScrabbleTest {
     }
 
     @Test
+    public void the_game_board_is_an_empty_square_of_given_size() {
+        Board board = new Board(5);
+        assertEquals(
+                  ".....\n"
+                + ".....\n"
+                + ".....\n"
+                + ".....\n"
+                + ".....\n"
+                ,board.toString());
+    }
+
+    @Test
     public void place_word_across_on_board() {
+
 
     }
 
