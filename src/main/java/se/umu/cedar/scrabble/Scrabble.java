@@ -6,4 +6,13 @@ public class Scrabble
     {
         System.out.println( "Hello World!" );
     }
+
+    public boolean combine(String word, String withLetters) {
+        for(char c : word.toCharArray()) {
+            if(withLetters.indexOf(c) < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
