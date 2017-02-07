@@ -5,18 +5,19 @@ public class Board {
 
     public Board(int size) {
         squares = new char[size][size];
+        for(int i = 0; i < squares[0].length; i++) {
+            for(int j = 0; j < squares[0].length; j++) {
+                squares[i][j] = '.';
+            }
+        }
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for(char[] r : squares) {
-            for(char c : r) {
-                if(c == Character.MIN_VALUE) {
-                    sb.append('.');
-                } else {
-                    sb.append(c);
-                }
+        for(char[] row : squares) {
+            for(char letter : row) {
+                sb.append(letter);
             }
             sb.append("\n");
         }
