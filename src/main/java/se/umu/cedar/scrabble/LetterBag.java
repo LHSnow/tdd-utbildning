@@ -1,4 +1,4 @@
 package se.umu.cedar.scrabble;
 
-public interface Board {
+public interface LetterBag {
 }

@@ -1,6 +1,12 @@
 package se.umu.cedar.scrabble;
 
 public class Scrabble {
+
+    private Dictionary dictionary;
+    private Board board;
+    private Scoring scoring;
+    private LetterBag letterBag;
+
     public boolean allowCombining(String word, String availableLetters) {
         return wordIsMadeUpOfAvailableLetters(word, availableLetters) && wordIsLongEnough(word);
     }
@@ -19,5 +25,37 @@ public class Scrabble {
             }
         }
         return true;
+    }
+
+    public Outcome play(Play play) {
+        return new Outcome();
+    }
+
+    public void setDictionary(Dictionary dictionary) {
+        this.dictionary = dictionary;
+    }
+
+    public Dictionary getDictionary() {
+        return dictionary;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
+    }
+
+    public void setScoring(Scoring scoring) {
+        this.scoring = scoring;
+    }
+
+    public Scoring getScoring() {
+        return scoring;
+    }
+
+    public void setLetterBag(LetterBag letterBag) {
+        this.letterBag = letterBag;
+    }
+
+    public void addRack(String player, String letters) {
+
     }
 }

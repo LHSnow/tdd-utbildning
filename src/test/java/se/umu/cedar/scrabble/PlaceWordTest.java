@@ -7,11 +7,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PlaceWordTest {
-    private Board board;
+    private HasbroBoard board;
 
     @Before
     public void given_a_game_board_of_size_five() {
-        board = new Board(5);
+        board = new HasbroBoard(5);
     }
 
     @Test
