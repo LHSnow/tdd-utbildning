@@ -30,8 +30,8 @@ public class GamePlayAcceptanceTest {
         scrabble.setLetterBag(new EnglishLetterBag());
 
         //* up to four racks (one for each player)
-        scrabble.addRack("Alice", "HORNARY");
-        scrabble.addRack("Bob", "FARMLLA");
+        scrabble.addRack("Alice", new Rack("HORNARY"));
+        scrabble.addRack("Bob", new Rack("FARMLLA"));
     }
 
     @Test

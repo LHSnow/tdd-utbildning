@@ -1,11 +1,15 @@
 package se.umu.cedar.scrabble;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Scrabble {
 
     private Dictionary dictionary;
     private Board board;
     private Scoring scoring;
     private LetterBag letterBag;
+    private Map<String, Rack> racks = new HashMap<String, Rack>();
 
     public boolean allowCombining(String word, String availableLetters) {
         return wordIsMadeUpOfAvailableLetters(word, availableLetters) && wordIsLongEnough(word);
@@ -55,7 +59,8 @@ public class Scrabble {
         this.letterBag = letterBag;
     }
 
-    public void addRack(String player, String letters) {
-
+    public void addRack(String player, Rack rack) {
+        racks.put(player, rack);
     }
+
 }

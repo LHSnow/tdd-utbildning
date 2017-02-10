@@ -2,7 +2,7 @@ package se.umu.cedar.scrabble;
 
 public class LetterPlacement {
     private String word;
-    private Reading direction;
+    private Reading direction = Reading.ACROSS;
     private int row;
     private int column;
 
