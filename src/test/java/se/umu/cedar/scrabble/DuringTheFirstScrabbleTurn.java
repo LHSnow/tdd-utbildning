@@ -22,13 +22,20 @@ public class DuringTheFirstScrabbleTurn {
     private Play play;
     @Mock
     private Scoring scoring;
+    @Mock
+    private Rack rack;
+    @Mock
+    private LetterBag bag;
 
     @Before
     public void setUp() throws Exception {
         scrabble = new Scrabble();
         scrabble.setBoard(board);
         scrabble.setScoring(scoring);
+        scrabble.setLetterBag(bag);
+        scrabble.addRack("player1", rack);
         play = new PlayBuilder()
+                .asPlayer("player1")
                 .playingLetters("HORN")
                 .inDirection(Reading.ACROSS)
                 .startingAt(2,1)
@@ -58,8 +65,11 @@ public class DuringTheFirstScrabbleTurn {
         assertTrue(outcome.getCreatedWords().contains("HORN"));
     }
 
-//    @Test
-//    public void new_tiles_are_added_to_the_player_rack() {
-//
-//    }
+    @Test
+    public void new_tiles_matching_the_length_of_the_played_word_are_added_from_the_letterBag_to_the_player_rack() {
+        scrabble.setLetterBag(bag);
+        when(bag.draw(4)).thenReturn("ABCD");
+        scrabble.play(play);
+        verify(rack).add("ABCD");
+    }
 }

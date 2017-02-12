@@ -12,6 +12,16 @@ public class Scrabble {
     private LetterBag letterBag;
     private Map<String, Rack> racks = new HashMap<String, Rack>();
 
+    public Outcome play(Play play) {
+        List<String> words = board.placeWord(play);
+        String drawnLetters = letterBag.draw(play.getWord().length());
+        racks.get(play.getPlayer()).add(drawnLetters);
+        Outcome outcome = new Outcome();
+        outcome.setTotalScore(scoring.score(play.getWord()));
+        outcome.setCreatedWords(words);
+        return outcome;
+    }
+
     public boolean allowCombining(String word, String availableLetters) {
         return wordIsMadeUpOfAvailableLetters(word, availableLetters) && wordIsLongEnough(word);
     }
@@ -30,14 +40,6 @@ public class Scrabble {
             }
         }
         return true;
-    }
-
-    public Outcome play(Play play) {
-        List<String> words = board.placeWord(play);
-        Outcome outcome = new Outcome();
-        outcome.setTotalScore(scoring.score(play.getWord()));
-        outcome.setCreatedWords(words);
-        return outcome;
     }
 
     public void setDictionary(Dictionary dictionary) {

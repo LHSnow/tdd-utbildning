@@ -5,6 +5,7 @@ public class PlayBuilder {
     private Reading direction = Reading.ACROSS;
     private int row;
     private int column;
+    private String player;
 
     public PlayBuilder playingLetters(String word) {
         this.word = word;
@@ -23,6 +24,11 @@ public class PlayBuilder {
     }
 
     public Play build() {
-        return new Play(word,direction,row,column);
+        return new Play(player,word,direction,row,column);
+    }
+
+    public PlayBuilder asPlayer(String playerName) {
+        this.player = playerName;
+        return this;
     }
 }

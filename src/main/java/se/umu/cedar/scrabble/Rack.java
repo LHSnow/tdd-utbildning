@@ -10,4 +10,8 @@ public class Rack {
     public String pick(String word) {
         return null;
     }
+
+    public void add(String letters) {
+
+    }
 }
