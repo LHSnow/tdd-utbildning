@@ -1,28 +1,28 @@
 package se.umu.cedar.scrabble;
 
-public class LetterPlacement {
+public class PlayBuilder {
     private String word;
     private Reading direction = Reading.ACROSS;
     private int row;
     private int column;
 
-    public LetterPlacement playingLetters(String word) {
+    public PlayBuilder playingLetters(String word) {
         this.word = word;
         return this;
     }
 
-    public LetterPlacement inDirection(Reading direction) {
+    public PlayBuilder inDirection(Reading direction) {
         this.direction = direction;
         return this;
     }
 
-    public LetterPlacement startingAt(int row, int column) {
+    public PlayBuilder startingAt(int row, int column) {
         this.row = row;
         this.column = column;
         return this;
     }
 
-    public Play play() {
+    public Play build() {
         return new Play(word,direction,row,column);
     }
 }

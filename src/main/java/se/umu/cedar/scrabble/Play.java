@@ -12,4 +12,20 @@ public class Play {
         this.row = row;
         this.column = column;
     }
+
+    public String getWord() {
+        return word;
+    }
+
+    public Reading getDirection() {
+        return direction;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
 }

@@ -36,11 +36,11 @@ public class GamePlayAcceptanceTest {
 
     @Test
     public void alice_the_first_player_plays_HORN_across_scoring_14_points_and_getting_4_new_tiles() {
-        Play play = new LetterPlacement()
+        Play play = new PlayBuilder()
                 .playingLetters("HORN")
                 .inDirection(Reading.ACROSS)
                 .startingAt(2,1)
-                .play();
+                .build();
 
         Outcome outcome = scrabble.play(play);
         assertEquals(14, outcome.totalScore());

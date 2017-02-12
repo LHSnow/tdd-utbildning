@@ -11,7 +11,6 @@ public class Scrabble {
     private Scoring scoring;
     private LetterBag letterBag;
     private Map<String, Rack> racks = new HashMap<String, Rack>();
-    private List<String> players;
 
     public boolean allowCombining(String word, String availableLetters) {
         return wordIsMadeUpOfAvailableLetters(word, availableLetters) && wordIsLongEnough(word);
@@ -34,7 +33,7 @@ public class Scrabble {
     }
 
     public Outcome play(Play play) {
-        racks.get(play.getPlayer()).pick()
+        board.placeWord(play.getWord(), play.getDirection(), play.getRow(), play.getColumn());
         return new Outcome();
     }
 
@@ -63,7 +62,6 @@ public class Scrabble {
     }
 
     public void addRack(String player, Rack rack) {
-        players.put(player);
         racks.put(player, rack);
     }
 
