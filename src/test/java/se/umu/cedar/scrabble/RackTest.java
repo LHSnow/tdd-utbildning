@@ -60,4 +60,9 @@ public class RackTest {
         assertEquals("ABDEF", rack.inspect());
     }
 
+    @Test
+    public void picking_letters_that_are_not_allowed_does_not_change_the_state_of_the_rack() {
+        rack.pick("Z");
+        assertEquals("ABCDEFG", rack.inspect());
+    }
 }
