@@ -7,8 +7,11 @@ public class Rack {
         this.letters = letters;
     }
 
-    public String pick(String word) {
-        return null;
+    public void pick(String word) {
+        for (char letterInWord : word.toCharArray()) {
+            String letter = String.valueOf(letterInWord);
+            letters = letters.replaceFirst(letter, "");
+        }
     }
 
     public void add(String letters) {
@@ -33,5 +36,9 @@ public class Rack {
             }
         }
         return true;
+    }
+
+    public String inspect() {
+        return letters;
     }
 }
