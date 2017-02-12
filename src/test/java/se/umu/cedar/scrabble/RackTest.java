@@ -65,4 +65,10 @@ public class RackTest {
         rack.pick("Z");
         assertEquals("ABCDEFG", rack.inspect());
     }
+
+    @Test
+    public void adding_a_letter_makes_the_rack_contain_it() {
+        rack.add("Z");
+        assertTrue("Expected " + rack.inspect() + " to contain Z", rack.inspect().contains("Z"));
+    }
 }

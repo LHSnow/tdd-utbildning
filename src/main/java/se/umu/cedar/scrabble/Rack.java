@@ -18,8 +18,8 @@ public class Rack {
         return true;
     }
 
-    public void add(String letters) {
-
+    public void add(String added) {
+        letters = letters + added;
     }
 
     public boolean allowPicking(String word) {
