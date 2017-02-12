@@ -37,7 +37,7 @@ public class DuringTheFirstScrabbleTurn {
         play = new PlayBuilder()
                 .asPlayer("player1")
                 .playingLetters("HORN")
-                .inDirection(Reading.ACROSS)
+                .across()
                 .startingAt(2,1)
                 .build();
     }
@@ -71,5 +71,11 @@ public class DuringTheFirstScrabbleTurn {
         when(bag.draw(4)).thenReturn("ABCD");
         scrabble.play(play);
         verify(rack).add("ABCD");
+    }
+
+    @Test
+    public void the_played_letters_are_picked_from_the_player_rack() {
+        scrabble.play(play);
+        verify(rack).pick("HORN");
     }
 }

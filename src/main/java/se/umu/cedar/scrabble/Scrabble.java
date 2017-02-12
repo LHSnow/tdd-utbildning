@@ -15,6 +15,7 @@ public class Scrabble {
     public Outcome play(Play play) {
         List<String> words = board.placeWord(play);
         String drawnLetters = letterBag.draw(play.getWord().length());
+        racks.get(play.getPlayer()).pick(play.getWord());
         racks.get(play.getPlayer()).add(drawnLetters);
         Outcome outcome = new Outcome();
         outcome.setTotalScore(scoring.score(play.getWord()));

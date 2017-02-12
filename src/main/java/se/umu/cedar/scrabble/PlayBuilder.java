@@ -31,4 +31,9 @@ public class PlayBuilder {
         this.player = playerName;
         return this;
     }
+
+    public PlayBuilder across() {
+        this.direction = Reading.ACROSS;
+        return this;
+    }
 }
