@@ -21,31 +21,32 @@ public class CombiningWordTest {
         */
     @Test
     public void one_combines_letters_to_form_a_word() {
-        assertTrue(rack.allowCombining("BAG", "ABCDEFG"));
+        assertTrue(rack.allowPicking("BAG"));
     }
 
     @Test
     public void single_letter_words_are_not_allowed() {
-        assertFalse(rack.allowCombining("A", "ABCDEFG"));
+        assertFalse(rack.allowPicking("A"));
     }
 
     @Test
     public void zero_letter_words_are_not_allowed() {
-        assertFalse(rack.allowCombining("", "ABCDEFG"));
+        assertFalse(rack.allowPicking(""));
     }
 
     @Test
     public void combining_words_with_non_existent_letters_is_not_allowed() {
-        assertFalse(rack.allowCombining("BAGS", "ABCDEFG"));
+        assertFalse(rack.allowPicking("BAGS"));
     }
 
     @Test
     public void using_the_same_letter_twice_is_not_allowed() {
-        assertFalse(rack.allowCombining("EDGE", "ABCDEFG"));
+        assertFalse(rack.allowPicking("EDGE"));
     }
 
     @Test
     public void using_two_of_the_same_letter_is_allowed() {
-        assertTrue(rack.allowCombining("EDGE", "DEEEEEG"));
+        rack = new Rack("DEEEEEG");
+        assertTrue(rack.allowPicking("EDGE"));
     }
 }

@@ -15,8 +15,8 @@ public class Rack {
 
     }
 
-    public boolean allowCombining(String word, String availableLetters) {
-        return wordIsMadeUpOfAvailableLetters(word, availableLetters) && wordIsLongEnough(word);
+    public boolean allowPicking(String word) {
+        return wordIsMadeUpOfAvailableLetters(word, letters) && wordIsLongEnough(word);
     }
 
     private boolean wordIsLongEnough(String word) {
