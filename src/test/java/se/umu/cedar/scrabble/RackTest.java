@@ -1,13 +1,14 @@
 package se.umu.cedar.scrabble;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class CombiningWordTest {
+public class RackTest {
 
     private Rack rack;
 
@@ -22,36 +23,32 @@ public class CombiningWordTest {
         */
     @Test
     public void one_combines_letters_to_form_a_word() {
-        assertTrue(rack.allowPicking("BAG"));
-    }
-
-    @Test
-    public void picking_single_letter_words_are_not_allowed() {
-        assertFalse(rack.allowPicking("A"));
+        assertTrue(rack.pick("BAG"));
     }
 
     @Test
     public void picking_zero_letters_is_not_allowed() {
-        assertFalse(rack.allowPicking(""));
+        assertFalse(rack.pick(""));
     }
 
     @Test
     public void combining_words_with_non_existent_letters_is_not_allowed() {
-        assertFalse(rack.allowPicking("BAGS"));
+        assertFalse(rack.pick("BAGS"));
     }
 
     @Test
     public void picking_the_same_letter_twice_is_not_allowed() {
-        assertFalse(rack.allowPicking("EDGE"));
+        assertFalse(rack.pick("EDGE"));
     }
 
     @Test
     public void picking_two_of_the_same_letter_is_allowed_when_rack_contains_them_all() {
         rack = new Rack("DEEEEEG");
-        assertTrue(rack.allowPicking("EDGE"));
+        assertTrue(rack.pick("EDGE"));
     }
 
     @Test
+    //It is allowed to pick one letter from the rack, but not in the first turn (TODO: acceptance test needed)
     public void picking_one_letter_removes_it_from_the_rack() {
         rack.pick("C");
         assertEquals("ABDEFG", rack.inspect());

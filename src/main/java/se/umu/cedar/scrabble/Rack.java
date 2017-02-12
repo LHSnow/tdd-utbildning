@@ -7,11 +7,15 @@ public class Rack {
         this.letters = letters;
     }
 
-    public void pick(String word) {
+    public boolean pick(String word) {
+        if(!allowPicking(word)) {
+            return false;
+        }
         for (char letterInWord : word.toCharArray()) {
             String letter = String.valueOf(letterInWord);
             letters = letters.replaceFirst(letter, "");
         }
+        return true;
     }
 
     public void add(String letters) {
@@ -19,14 +23,14 @@ public class Rack {
     }
 
     public boolean allowPicking(String word) {
-        return wordIsMadeUpOfAvailableLetters(word, letters) && wordIsLongEnough(word);
+        return isMadeUpOfAvailableLetters(word, letters) && isLongEnough(word);
     }
 
-    private boolean wordIsLongEnough(String word) {
-        return word.length() >= 2;
+    private boolean isLongEnough(String word) {
+        return word.length() > 0;
     }
 
-    private boolean wordIsMadeUpOfAvailableLetters(String word, String availableLetters) {
+    private boolean isMadeUpOfAvailableLetters(String word, String availableLetters) {
         for (char letterInWord : word.toCharArray()) {
             if (availableLetters.indexOf(letterInWord) < 0) {
                 return false;
