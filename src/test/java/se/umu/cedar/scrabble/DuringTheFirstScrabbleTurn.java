@@ -78,4 +78,11 @@ public class DuringTheFirstScrabbleTurn {
         scrabble.play(play);
         verify(rack).pick("HORN");
     }
+
+    @Test
+    public void the_replacement_tiles_are_added_to_the_outcome() {
+        when(bag.draw(4)).thenReturn("ABCD");
+        Outcome outcome = scrabble.play(play);
+        assertEquals("ABCD", outcome.getReplacementTiles());
+    }
 }

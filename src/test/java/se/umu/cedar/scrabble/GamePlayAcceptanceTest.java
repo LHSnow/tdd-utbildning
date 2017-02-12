@@ -46,6 +46,6 @@ public class GamePlayAcceptanceTest {
         assertEquals(14, outcome.getTotalScore());
         assertEquals(1, outcome.getCreatedWords().size());
         assertTrue(outcome.getCreatedWords().contains("HORN"));
-        assertEquals("HORN".length(), outcome.replacementTiles().length());
+        assertEquals("HORN".length(), outcome.getReplacementTiles().length());
     }
 }

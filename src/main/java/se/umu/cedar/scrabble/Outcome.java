@@ -6,13 +6,10 @@ import java.util.List;
 public class Outcome {
     private int totalScore;
     private List<String> createdWords;
+    private String replacementTiles;
 
     public Collection<String> getCreatedWords() {
         return createdWords;
-    }
-
-    public String replacementTiles() {
-        return "";
     }
 
     public void setTotalScore(int totalScore) {
@@ -25,5 +22,13 @@ public class Outcome {
 
     public void setCreatedWords(List<String> createdWords) {
         this.createdWords = createdWords;
+    }
+
+    public void setReplacementTiles(String drawnLetters) {
+        this.replacementTiles = drawnLetters;
+    }
+
+    public String getReplacementTiles() {
+        return replacementTiles;
     }
 }

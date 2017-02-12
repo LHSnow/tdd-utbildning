@@ -24,6 +24,7 @@ public class Scrabble {
 
         String drawnLetters = letterBag.draw(playedWord.length());
         rack.add(drawnLetters);
+        outcome.setReplacementTiles(drawnLetters);
 
         return outcome;
     }
