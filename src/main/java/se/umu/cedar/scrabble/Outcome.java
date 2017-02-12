@@ -24,8 +24,8 @@ public class Outcome {
         this.createdWords = createdWords;
     }
 
-    public void setReplacementTiles(String drawnLetters) {
-        this.replacementTiles = drawnLetters;
+    public void setReplacementTiles(String replacementTiles) {
+        this.replacementTiles = replacementTiles;
     }
 
     public String getReplacementTiles() {

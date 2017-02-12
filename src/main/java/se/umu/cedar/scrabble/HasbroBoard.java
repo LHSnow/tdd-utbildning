@@ -46,7 +46,7 @@ public class HasbroBoard implements Board {
         return null;
     }
 
-    public List<String> placeWord(Play play) {
-        return placeWord(play.getWord(), play.getDirection(), play.getRow(), play.getColumn());
+    public List<String> placeWord(WordPlacement wordPlacement) {
+        return placeWord(wordPlacement.getWord(), wordPlacement.getDirection(), wordPlacement.getRow(), wordPlacement.getColumn());
     }
 }

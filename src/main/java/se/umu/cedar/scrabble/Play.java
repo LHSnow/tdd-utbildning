@@ -1,7 +1,7 @@
 package se.umu.cedar.scrabble;
 
-public class Play {
-    private final String player;
+public class Play implements WordPlacement {
+    private String player;
     private final String word;
     private final Reading direction;
     private final int row;
