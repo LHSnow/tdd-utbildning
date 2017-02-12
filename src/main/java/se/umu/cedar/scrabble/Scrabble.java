@@ -13,13 +13,18 @@ public class Scrabble {
     private Map<String, Rack> racks = new HashMap<String, Rack>();
 
     public Outcome play(Play play) {
+        Rack rack = racks.get(play.getPlayer());
+        String playedWord = play.getWord();
+        rack.pick(playedWord);
+
         List<String> words = board.placeWord(play);
-        String drawnLetters = letterBag.draw(play.getWord().length());
-        racks.get(play.getPlayer()).pick(play.getWord());
-        racks.get(play.getPlayer()).add(drawnLetters);
         Outcome outcome = new Outcome();
-        outcome.setTotalScore(scoring.score(play.getWord()));
+        outcome.setTotalScore(scoring.score(playedWord));
         outcome.setCreatedWords(words);
+
+        String drawnLetters = letterBag.draw(playedWord.length());
+        rack.add(drawnLetters);
+
         return outcome;
     }
 
