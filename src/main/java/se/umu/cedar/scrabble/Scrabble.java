@@ -33,7 +33,7 @@ public class Scrabble {
     }
 
     public Outcome play(Play play) {
-        board.placeWord(play.getWord(), play.getDirection(), play.getRow(), play.getColumn());
+        board.placeWord(play);
         return new Outcome();
     }
 

@@ -41,4 +41,8 @@ public class HasbroBoard implements Board {
             }
         }
     }
+
+    public void placeWord(Play play) {
+        placeWord(play.getWord(), play.getDirection(), play.getRow(), play.getColumn());
+    }
 }

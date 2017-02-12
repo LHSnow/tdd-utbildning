@@ -27,13 +27,13 @@ public class DuringTheFirstScrabbleTurn {
                 .inDirection(Reading.ACROSS)
                 .startingAt(2,1)
                 .build();
-
         scrabble.play(play);
-        verify(board).placeWord("HORN", Reading.ACROSS, 2, 1);
+        verify(board).placeWord(play);
     }
 
 //    @Test
 //    public void the_word_is_scored() {
+//        scrabble.play(play);
 //
 //    }
 //
