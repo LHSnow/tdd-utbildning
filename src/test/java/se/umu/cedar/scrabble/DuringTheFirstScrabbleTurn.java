@@ -6,7 +6,11 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -41,10 +45,19 @@ public class DuringTheFirstScrabbleTurn {
     public void the_word_scoring_is_added_to_the_outcome() {
         when(scoring.score("HORN")).thenReturn(14);
         Outcome outcome = scrabble.play(play);
-        assertEquals(14, outcome.totalScore());
+        assertEquals(14, outcome.getTotalScore());
         verify(scoring).score("HORN");
     }
-//
+
+    @Test
+    public void the_created_words_are_added_to_the_outcome() {
+        List<String> createdWords = new ArrayList<String>() {{add("HORN");}};
+        when(board.placeWord(play)).thenReturn(createdWords);
+        Outcome outcome = scrabble.play(play);
+        assertEquals(1, outcome.getCreatedWords().size());
+        assertTrue(outcome.getCreatedWords().contains("HORN"));
+    }
+
 //    @Test
 //    public void new_tiles_are_added_to_the_player_rack() {
 //

@@ -1,6 +1,7 @@
 package se.umu.cedar.scrabble;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Scrabble {
@@ -32,9 +33,10 @@ public class Scrabble {
     }
 
     public Outcome play(Play play) {
-        board.placeWord(play);
+        List<String> words = board.placeWord(play);
         Outcome outcome = new Outcome();
         outcome.setTotalScore(scoring.score(play.getWord()));
+        outcome.setCreatedWords(words);
         return outcome;
     }
 

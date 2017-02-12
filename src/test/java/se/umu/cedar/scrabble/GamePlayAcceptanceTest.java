@@ -43,9 +43,9 @@ public class GamePlayAcceptanceTest {
                 .build();
 
         Outcome outcome = scrabble.play(play);
-        assertEquals(14, outcome.totalScore());
-        assertEquals(1, outcome.createdWords().size());
-        assertTrue(outcome.createdWords().contains("HORN"));
+        assertEquals(14, outcome.getTotalScore());
+        assertEquals(1, outcome.getCreatedWords().size());
+        assertTrue(outcome.getCreatedWords().contains("HORN"));
         assertEquals("HORN".length(), outcome.replacementTiles().length());
     }
 }

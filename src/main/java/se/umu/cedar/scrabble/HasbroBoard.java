@@ -1,5 +1,8 @@
 package se.umu.cedar.scrabble;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HasbroBoard implements Board {
     private final char[][] squares;
 
@@ -24,7 +27,7 @@ public class HasbroBoard implements Board {
         return sb.toString();
     }
 
-    public void placeWord(String word, Reading direction, int row, int column) throws IllegalArgumentException {
+    public List<String> placeWord(String word, Reading direction, int row, int column) throws IllegalArgumentException {
         for (char letter : word.toCharArray()) {
             try {
                 squares[row][column] = letter;
@@ -40,9 +43,10 @@ public class HasbroBoard implements Board {
                     break;
             }
         }
+        return null;
     }
 
-    public void placeWord(Play play) {
-        placeWord(play.getWord(), play.getDirection(), play.getRow(), play.getColumn());
+    public List<String> placeWord(Play play) {
+        return placeWord(play.getWord(), play.getDirection(), play.getRow(), play.getColumn());
     }
 }

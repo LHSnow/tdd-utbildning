@@ -1,16 +1,14 @@
 package se.umu.cedar.scrabble;
 
 import java.util.Collection;
+import java.util.List;
 
 public class Outcome {
     private int totalScore;
+    private List<String> createdWords;
 
-    public int totalScore() {
-        return totalScore;
-    }
-
-    public Collection<String> createdWords() {
-        return null;
+    public Collection<String> getCreatedWords() {
+        return createdWords;
     }
 
     public String replacementTiles() {
@@ -23,5 +21,9 @@ public class Outcome {
 
     public int getTotalScore() {
         return totalScore;
+    }
+
+    public void setCreatedWords(List<String> createdWords) {
+        this.createdWords = createdWords;
     }
 }
