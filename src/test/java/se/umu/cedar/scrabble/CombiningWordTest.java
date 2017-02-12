@@ -8,11 +8,11 @@ import static org.junit.Assert.assertTrue;
 
 public class CombiningWordTest {
 
-    private Scrabble scrabble;
+    private Rack rack;
 
     @Before
     public void in_a_scrabble_game() {
-        scrabble = new Scrabble();
+        rack = new Rack("ABCDEFG");
     }
 
     /* #1
@@ -21,31 +21,31 @@ public class CombiningWordTest {
         */
     @Test
     public void one_combines_letters_to_form_a_word() {
-        assertTrue(scrabble.allowCombining("BAG", "ABCDEFG"));
+        assertTrue(rack.allowCombining("BAG", "ABCDEFG"));
     }
 
     @Test
     public void single_letter_words_are_not_allowed() {
-        assertFalse(scrabble.allowCombining("A", "ABCDEFG"));
+        assertFalse(rack.allowCombining("A", "ABCDEFG"));
     }
 
     @Test
     public void zero_letter_words_are_not_allowed() {
-        assertFalse(scrabble.allowCombining("", "ABCDEFG"));
+        assertFalse(rack.allowCombining("", "ABCDEFG"));
     }
 
     @Test
     public void combining_words_with_non_existent_letters_is_not_allowed() {
-        assertFalse(scrabble.allowCombining("BAGS", "ABCDEFG"));
+        assertFalse(rack.allowCombining("BAGS", "ABCDEFG"));
     }
 
     @Test
     public void using_the_same_letter_twice_is_not_allowed() {
-        assertFalse(scrabble.allowCombining("EDGE", "ABCDEFG"));
+        assertFalse(rack.allowCombining("EDGE", "ABCDEFG"));
     }
 
     @Test
     public void using_two_of_the_same_letter_is_allowed() {
-        assertTrue(scrabble.allowCombining("EDGE", "DEEEEEG"));
+        assertTrue(rack.allowCombining("EDGE", "DEEEEEG"));
     }
 }
