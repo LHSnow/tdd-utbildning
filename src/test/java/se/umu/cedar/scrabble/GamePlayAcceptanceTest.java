@@ -35,7 +35,7 @@ public class GamePlayAcceptanceTest {
     }
 
     @Test
-    public void alice_the_first_player_plays_HORN_across_scoring_14_points_and_getting_4_new_tiles() {
+    public void alice_the_first_player_plays_HORN_across_scoring_14_points_getting_4_new_tiles() {
         Play play = new PlayBuilder()
                 .asPlayer("Alice")
                 .playingLetters("HORN")
@@ -48,5 +48,21 @@ public class GamePlayAcceptanceTest {
         assertEquals(1, outcome.getCreatedWords().size());
         assertTrue(outcome.getCreatedWords().contains("HORN"));
         assertEquals("HORN".length(), outcome.getReplacementTiles().length());
+    }
+
+    @Test
+    public void bob_the_second_player_plays_FARM_down_scoring_9_points_getting_3_new_tiles() {
+        Play play = new PlayBuilder()
+                .asPlayer("Bob")
+                .playingLetters("FAM")
+                .inDirection(Reading.DOWN)
+                .startingAt(1,2)
+                .build();
+
+        Outcome outcome = scrabble.play(play);
+        assertEquals(9, outcome.getTotalScore());
+        assertEquals(1, outcome.getCreatedWords().size());
+        assertTrue(outcome.getCreatedWords().contains("FARM"));
+        assertEquals("FAM".length(), outcome.getReplacementTiles().length());
     }
 }
