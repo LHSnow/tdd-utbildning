@@ -7,6 +7,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -58,8 +59,7 @@ public class DuringTheFirstScrabbleTurn {
 
     @Test
     public void the_created_words_are_added_to_the_outcome() {
-        List<String> createdWords = new ArrayList<String>() {{add("HORN");}};
-        when(board.placeWord(play)).thenReturn(createdWords);
+        when(board.placeWord(play)).thenReturn(Arrays.asList("HORN"));
         Outcome outcome = scrabble.play(play);
         assertEquals(1, outcome.getCreatedWords().size());
         assertTrue(outcome.getCreatedWords().contains("HORN"));
@@ -67,7 +67,6 @@ public class DuringTheFirstScrabbleTurn {
 
     @Test
     public void new_tiles_matching_the_length_of_the_played_word_are_added_from_the_letterBag_to_the_player_rack() {
-        scrabble.setLetterBag(bag);
         when(bag.draw(4)).thenReturn("ABCD");
         scrabble.play(play);
         verify(rack).add("ABCD");
