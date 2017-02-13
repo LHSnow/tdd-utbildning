@@ -39,7 +39,7 @@ public class GamePlayAcceptanceTest {
         Play play = new PlayBuilder()
                 .asPlayer("Alice")
                 .playingLetters("HORN")
-                .inDirection(Reading.ACROSS)
+                .across()
                 .startingAt(2,1)
                 .build();
 
@@ -55,7 +55,7 @@ public class GamePlayAcceptanceTest {
         Play play = new PlayBuilder()
                 .asPlayer("Bob")
                 .playingLetters("FAM")
-                .inDirection(Reading.DOWN)
+                .down()
                 .startingAt(1,2)
                 .build();
 

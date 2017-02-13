@@ -12,11 +12,6 @@ public class PlayBuilder {
         return this;
     }
 
-    public PlayBuilder inDirection(Reading direction) {
-        this.direction = direction;
-        return this;
-    }
-
     public PlayBuilder startingAt(int row, int column) {
         this.row = row;
         this.column = column;
@@ -34,6 +29,11 @@ public class PlayBuilder {
 
     public PlayBuilder across() {
         this.direction = Reading.ACROSS;
+        return this;
+    }
+
+    public PlayBuilder down() {
+        this.direction = Reading.DOWN;
         return this;
     }
 }
