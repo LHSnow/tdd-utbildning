@@ -51,21 +51,6 @@ Mål: Förstå och utföra processen med enhetstest (red-green-refactor)
 
 > Lunch
 
-### Från krav till test
-
-Mål: Omvandla ett krav till lämplig mängd enhetstester och dessas implementation
-
-- Introduktion till Behavior Driven Development (BDD)
-- Samarbete med beställare
-- Att definiera scope
-- Testbara exempel (specification by example)
-- Levande dokumentation
-- Tester ska också underhållas
-
-Övning: Story -> acceptanstest -> red-green-refactor - "end to end"
-
-> Fika
-
 ### Ännu bättre enhetstester
 
 Mål: Skriva läsbara och återanvändbara tester för att förenkla (morgondagens) refaktorisering
@@ -78,6 +63,21 @@ Mål: Skriva läsbara och återanvändbara tester för att förenkla (morgondage
 - Att undvika överproduktion (you ain't gonna need it)
 
 Övning: Test av exceptions och förbättring av existerande test
+
+> Fika
+
+### Från krav till test
+
+Mål: Omvandla ett krav till lämplig mängd enhetstester och dessas implementation
+
+- Introduktion till Behavior Driven Development (BDD)
+- Samarbete med beställare
+- Att definiera scope
+- Testbara exempel (specification by example)
+- Levande dokumentation
+- Tester ska också underhållas
+
+Övning: Story -> acceptanstest -> red-green-refactor - "end to end"
 
 Dag 2
 ----
