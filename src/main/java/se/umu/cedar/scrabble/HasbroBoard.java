@@ -27,7 +27,7 @@ public class HasbroBoard implements Board {
         return sb.toString();
     }
 
-    public List<String> placeWord(String word, Reading direction, int row, int column) throws IllegalArgumentException {
+    public List<String> placeWord(final String word, Reading direction, int row, int column) throws IllegalArgumentException {
         for (char letter : word.toCharArray()) {
             try {
                 squares[row][column] = letter;
@@ -43,7 +43,7 @@ public class HasbroBoard implements Board {
                     break;
             }
         }
-        return null;
+        return new ArrayList<String>(){{add(word);}};
     }
 
     public List<String> placeWord(WordPlacement wordPlacement) {
