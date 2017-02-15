@@ -12,15 +12,15 @@ Det här dokumentet kommer fyllas på med inledande information till deltagarna.
 Följ instruktionerna nedan, antingen via IntelliJs menyer eller via ``kommandorad``. I det senare fallet kan du använda antingen git bash eller kommandotolken (windows).
 
 1. Importera git-repositoryt i IntelliJ   
-  - file > new > project from version control > git
+  - File > new > project from version control > git > ``git@github.com:LHSnow/tdd-utbildning.git``
   - ``git clone git@github.com:LHSnow/tdd-utbildning.git``
-2. Checka ut startpositionen som en ny branch  
-  - version control: log > "start" > new branch
+2. Checka ut start-taggen som en ny branch  
+  - Version control (alt+9): log > hitta commit med tag "start" > högerklicka > New branch... > Välj namn
   - ``git checkout start``
 3. Importera projektet som ett maven-projekt  
-  - file > import settings > pom.xml
+  - Högerklicka på pom.xml i filträdet (alt+1) > Add Maven project
 4. Ladda ner dess beroenden via IntelliJ:s maven-plugin
-  - Build > build project
+  - Build > build project > (eventuellt) välj JDK
   - ``mvn compile``
 
 Om du hamnar efter i övningarna går det bra att ”spola framåt” i kodexemplen i git-repositoryt enligt punkt (2) och välja en annan startposition.
