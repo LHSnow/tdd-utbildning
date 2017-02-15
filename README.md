@@ -13,14 +13,19 @@ Följ instruktionerna nedan, antingen via IntelliJs menyer eller via ``kommandor
 
 1. Importera git-repositoryt i IntelliJ   
   - File > new > project from version control > git > ``git@github.com:LHSnow/tdd-utbildning.git``
+    1. ![project from version control](docs/newProject.png)
+    2. ![clone repository](docs/cloneRepo.png)
   - ``git clone git@github.com:LHSnow/tdd-utbildning.git``
 2. Checka ut start-taggen som en ny branch  
   - Version control (alt+9): log > hitta commit med tag "start" > högerklicka > New branch... > Välj namn
+  ![checkout branch](docs/newBranch.png)
   - ``git checkout start``
 3. Importera projektet som ett maven-projekt  
   - Högerklicka på pom.xml i filträdet (alt+1) > Add Maven project
+  ![maven project](docs/mavenProject.png)
 4. Ladda ner dess beroenden via IntelliJ:s maven-plugin
-  - Build > build project > (eventuellt) välj JDK
+  - Build > build project > (eventuellt) välj SDK
+  ![module sdk](docs/moduleSdk.png)
   - ``mvn compile``
 
 Om du hamnar efter i övningarna går det bra att ”spola framåt” i kodexemplen i git-repositoryt enligt punkt (2) och välja en annan startposition.
