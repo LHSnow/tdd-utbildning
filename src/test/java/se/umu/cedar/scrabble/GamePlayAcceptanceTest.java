@@ -40,7 +40,8 @@ public class GamePlayAcceptanceTest {
                 .asPlayer("Alice")
                 .playingLetters("HORN")
                 .across()
-                .startingAt(2,1)
+                .atRow(2)
+                .atColumn(1)
                 .build();
 
         Outcome outcome = scrabble.play(play);
@@ -52,5 +53,18 @@ public class GamePlayAcceptanceTest {
 
     @Test
     public void bob_the_second_player_plays_FARM_down_scoring_9_points_getting_3_new_tiles() {
+        Play play = new PlayBuilder()
+                .asPlayer("Bob")
+                .playingLetters("FAM")
+                .down()
+                .atRow(1)
+                .atColumn(2)
+                .build();
+
+        Outcome outcome = scrabble.play(play);
+        assertEquals(9, outcome.getTotalScore());
+        assertEquals(1, outcome.getCreatedWords().size());
+        assertTrue(outcome.getCreatedWords().contains("FARM"));
+        assertEquals("FAM".length(), outcome.getReplacementTiles().length());
     }
 }
