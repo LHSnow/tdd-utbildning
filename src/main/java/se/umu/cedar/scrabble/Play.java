@@ -34,4 +34,8 @@ public class Play {
     public int getColumn() {
         return column;
     }
+
+    public String getPlayer() {
+        return player;
+    }
 }

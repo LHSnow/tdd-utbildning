@@ -30,6 +30,11 @@ public class DuringTheFirstScrabbleTurn {
 
     @Before
     public void setUp() throws Exception {
+        scrabble = new Scrabble();
+        scrabble.setBoard(board);
+        scrabble.setScoring(scoring);
+        scrabble.setLetterBag(bag);
+        scrabble.addRack("player1", rack);
         play = new PlayBuilder()
                 .asPlayer("player1")
                 .playingLetters("HORN")
@@ -55,21 +60,29 @@ public class DuringTheFirstScrabbleTurn {
 
     @Test
     public void the_created_words_are_added_to_the_outcome() {
-
+        when(board.placeWord(play)).thenReturn(Arrays.asList("HORN"));
+        Outcome outcome = scrabble.play(play);
+        assertEquals(1, outcome.getCreatedWords().size());
+        assertTrue(outcome.getCreatedWords().contains("HORN"));
     }
 
     @Test
     public void new_tiles_matching_the_length_of_the_played_word_are_added_from_the_letterBag_to_the_player_rack() {
-
+        when(bag.draw(4)).thenReturn("ABCD");
+        scrabble.play(play);
+        verify(rack).add("ABCD");
     }
 
     @Test
     public void the_played_letters_are_picked_from_the_player_rack() {
-
+        scrabble.play(play);
+        verify(rack).pick("HORN");
     }
 
     @Test
     public void the_replacement_tiles_are_added_to_the_outcome() {
-
+        when(bag.draw(4)).thenReturn("ABCD");
+        Outcome outcome = scrabble.play(play);
+        assertEquals("ABCD", outcome.getReplacementTiles());
     }
 }
