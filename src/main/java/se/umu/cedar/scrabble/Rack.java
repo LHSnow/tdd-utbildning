@@ -19,6 +19,9 @@ public class Rack {
     }
 
     public void add(String added) {
+        if(letters.length() + added.length() > 7) {
+            throw new IllegalArgumentException();
+        }
         letters = letters + added;
     }
 
