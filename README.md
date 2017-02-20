@@ -16,10 +16,8 @@ Följ instruktionerna nedan, antingen via IntelliJs menyer eller via ``kommandor
     1. ![project from version control](docs/newProject.png)
     2. ![clone repository](docs/cloneRepo.png)
   - ``git clone git@github.com:LHSnow/tdd-utbildning.git``
-2. Checka ut start-taggen som en ny branch  
-  - Version control (alt+9): log > hitta commit med tag "start" > högerklicka > New branch... > Välj namn
-  ![checkout branch](docs/newBranch.png)
-  - ``git checkout start``
+2. Byt branch till "canary"    
+  - ``git checkout canary``
 3. Importera projektet som ett maven-projekt  
   - Högerklicka på pom.xml i filträdet (alt+1) > Add Maven project
   ![maven project](docs/mavenProject.png)
