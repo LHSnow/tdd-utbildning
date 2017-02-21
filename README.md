@@ -7,6 +7,13 @@ Det här dokumentet kommer fyllas på med inledande information till deltagarna.
 - [Kursplan](plan.md)
 - [Spelregler för Scrabble](http://scrabble.hasbro.com/en-us/rules)
 
+## Övningar
+
+- [Enhetstesta funktion](docs/funktion.md)
+- [Refaktorisera](docs/refaktorisera.md)
+- [Acceptanstest](docs/acceptanstest.md)
+- [Mockning](docs/mockning.md)
+
 ## Kom igång
 
 Följ instruktionerna nedan, antingen via IntelliJs menyer eller via ``kommandorad``. I det senare fallet kan du använda antingen git bash eller kommandotolken (windows).
