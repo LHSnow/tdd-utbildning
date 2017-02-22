@@ -9,7 +9,7 @@ Det här dokumentet kommer fyllas på med inledande information till deltagarna.
 
 ## Övningar
 
-- [Enhetstesta funktion](docs/funktion.md)
+- [Enhetstesta funktion](docs/klass.md)
 - [Refaktorisera](docs/refaktorisera.md)
 - [Acceptanstest](docs/acceptanstest.md)
 - [Mockning](docs/mockning.md)
